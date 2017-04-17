@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Twitch Streamer</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <body>
+<div ng-app="twitchViewer">
+<div ng-controller="twitchController" ng-init="twitchController()">
+  
+  <div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6 well">
+          <div class="row">
+            <div class="col-xs-12">
+              <h1> TWITCH STREAMERS </h1>
+            </div>
+          </div>
+          <div class="row result" ng-repeat="channel in data">
+              <div class="col-xs-3 imgr">
+               <img class="smaller-image" ng-src={{channel.logo}}></img>
+          </div> <div class="col-xs-9">
+              <h3 class="filler"> <a ng-href="{{ channel.url }}"> {{ channel.name }} </a> </h3>
+           <h4 class="filler" style="color: {{channel.statusColor}}"> Status: {{ channel.status }} </h4>
+            <h4 class="filler" style="color: {{channel.statusColor}}"> Followers: {{ channel.subscribers }} </h4>
+            <h4 class="filler" style="color: {{channel.statusColor}}"> Views: {{ channel.views }} </h4>
+          <h4> {{ channel.game }} </h4>
+            </div>
+          </div>
+      <p> for more twitch channels go to <a href="https://www.twitch.tv/"> Twitch </a> tv </p> 
+      </div>
+    </div>
+  </div>
+  
+</div>
+</div>
+
+</body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
